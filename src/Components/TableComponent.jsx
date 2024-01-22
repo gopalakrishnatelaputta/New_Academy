@@ -4,7 +4,7 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import CodeIcon from '@mui/icons-material/Code';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import MicIcon from '@mui/icons-material/Mic';
-import { Box, Typography, LinearProgress } from '@mui/material';
+import { Box, Typography, LinearProgress, Card } from '@mui/material';
 import ComputerIcon from '@mui/icons-material/Computer';
 
 const CourseNameComponent = ({ icon, expert, designation }) => (
@@ -24,10 +24,18 @@ const CourseNameComponent = ({ icon, expert, designation }) => (
 
 const TableComponent = () => {
   const arr4 = [
-    { icon: <VideocamIcon sx={{ color: '#696cff !important', bgcolor: '#e7e7ff !important', width: '35px', height: '35px' }} />, expert: 'Videography Basic', designation: 'Design Course' },
-    { icon: <CodeIcon sx={{ color: '#03c3ec !important', bgcolor: '#d7f5fc !important', width: '35px', height: '35px' }} />, expert: 'Basic Front-end', designation: 'Development Course' },
-    { icon: <CameraAltIcon sx={{ color: '#71dd37 !important', bgcolor: '#e8fadf !important', width: '35px', height: '35px' }} />, expert: 'Basic Fundamentals ', designation: 'Photography' },
-    { icon: <MicIcon sx={{ color: '#ff3e1d !important', bgcolor: '#ffe0db !important', width: '35px', height: '35px' }} />, expert: 'Your First Singing', designation: 'Lesson' },
+    { icon: <Card   elevation={0.8} sx={{mb:'15px',height:'35px',width:'40px',borderRadius:'6px',display:'flex',alignContent:'center',alignItems:'center',justifyContent:'space-evenly' , bgcolor: '#e7e7ff !important'}}>
+    <VideocamIcon sx={{ color: '#696cff !important', width: '35px', height: '25px' }} />
+    </Card>, expert: 'Videography Basic', designation: 'Design Course' },
+    { icon: <Card elevation={0.8} sx={{mb:'15px', height:'35px',width:'40px',borderRadius:'6px',display:'flex',alignContent:'center',alignItems:'center',justifyContent:'space-evenly', bgcolor: '#d7f5fc !important'}}>
+    <CodeIcon sx={{ color: '#03c3ec !important', width: '35px', height: '25px' }}/>
+    </Card>, expert: 'Basic Front-end', designation: 'Development Course' },
+    { icon: <Card elevation={0.8} sx={{mb:'15px', height:'35px',width:'40px',borderRadius:'6px',display:'flex',alignContent:'center',alignItems:'center',justifyContent:'space-evenly',  bgcolor: '#CBEEB3 !important'}}>
+    <CameraAltIcon sx={{ color: '#71dd37 !important', width: '35px', height: '25px' }} />
+    </Card>, expert: 'Basic Fundamentals ', designation: 'Photography' },
+    { icon: <Card elevation={0.8} sx={{mb:'15px', height:'35px',width:'40px',borderRadius:'6px',display:'flex',alignContent:'center',alignItems:'center',justifyContent:'space-evenly', bgcolor: '#ffe0db !important'}}>
+    <MicIcon sx={{ color: '#ff3e1d !important', width: '35px', height: '25px' }} />
+   </Card>, expert: 'Your First Singing', designation: 'Lesson' },
   ];
 
   const [data, setData] = useState([

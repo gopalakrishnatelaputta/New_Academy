@@ -1,93 +1,94 @@
-import React from 'react';
-import { Typography, Box } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import React, { useEffect, useState } from 'react';
+import {
+  Typography,
+  Box,
+} from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Home, Dashboard, FlipToFront, Email, ChatBubble, CalendarMonth, ViewKanban, ShoppingCart, Receipt, LocalShipping, PersonAddAlt } from '@mui/icons-material';
+import Home from '@mui/icons-material/Home';
+import Dashboard from '@mui/icons-material/Dashboard';
+import FlipToFront from '@mui/icons-material/FlipToFront';
+import Email from '@mui/icons-material/Email';
+import ChatBubble from '@mui/icons-material/ChatBubble';
+import CalendarMonth from '@mui/icons-material/CalendarMonth';
+import ViewKanban from '@mui/icons-material/ViewKanban';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
+import Receipt from '@mui/icons-material/Receipt';
+import LocalShipping from '@mui/icons-material/LocalShipping';
+import PersonAddAlt from '@mui/icons-material/PersonAddAlt';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import CloseIcon from '@mui/icons-material/Close';
 
-const SideNavbar = () => {
+const SideNavbar = ({ isMenuOpen: parentIsMenuOpen, handleMenuClose }) => {
+  const [localIsMenuOpen, setLocalIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setLocalIsMenuOpen(parentIsMenuOpen);
+  }, [parentIsMenuOpen]);
+
+  const handleLocalMenuClose = () => {
+    setLocalIsMenuOpen(false);
+    handleMenuClose(); // Propagate the state change to the parent component
+  };
+
   return (
-    <Box sx={{ ml: ['5px', '0px'], mr: ['5px', '10px'], height: ['100%', '750px'], borderRadius: '5px', mt: '15px' }}>
-
-      <Box sx={{ display: 'flex', m: '10px', justifyContent: 'space-between' }}>
-        <MenuIcon />
-        <MoreVertIcon />
+    <Box
+      sx={{
+        ml: ['5px', '0px'],
+        mr: ['5px', '10px'],
+        height: ['100%', '750px'],
+        borderRadius: '5px',
+        mt: '15px',
+      }}
+    >
+      <Box sx={{ display: 'flex', m: '10px', justifyContent: 'flex-end' }}>
+        <CloseIcon onClick={handleLocalMenuClose}/>
       </Box>
       <hr />
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px',alignItems:'center' }}>
-        <Box sx={{ display: 'flex', ml: '20px' }}>
+
+     
+      <Box sx={{ display: 'flex', flexDirection: 'column', mt: '30px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
           <Home sx={{ height: '30px', width: '30px' }} />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Home</Typography>
+          <Typography variant='h7' sx={{ ml: '20px', mt: '5px' }}>Home</Typography>
+          <ArrowForwardIosIcon fontSize='10px' />
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '20px',alignItems:'center'}}>
-        <Box sx={{ ml: '20px' }}>
-          <Dashboard />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Dashboard</Typography>
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px',alignItems:'center' }}>
-        <Box sx={{ ml: '20px' }}>
-          <FlipToFront />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Layout</Typography>
-        </Box>
-      </Box>
-      <hr />
-      <Typography ml={'10px'}>
-        APPS & PAGES
-      </Typography>
-      <hr />
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px' }}>
-        <Box sx={{ ml: '20px' }}>
-          <Email />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Email</Typography>
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px' }}>
-        <Box sx={{ ml: '20px' }}>
-          <ChatBubble />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Chat</Typography>
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px' }}>
-        <Box sx={{ ml: '20px' }}>
-          <CalendarMonth />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Calender</Typography>
+      <Box sx={{ display: 'flex', flexDirection: 'column', mt: '30px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
+          <Dashboard sx={{ height: '30px', width: '30px' }} />
+          <Typography variant='h7' sx={{ ml: '20px', mt: '5px' }}>Dashboard</Typography>
         </Box>
       </Box>
 
-      {/* Placeholder for unused icons */}
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px' }}>
-        <Box sx={{ ml: '20px' }}>
-          <ViewKanban />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Kanbann</Typography>
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'column', mt: '30px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
+          <FlipToFront sx={{ height: '30px', width: '30px' }} />
+          <Typography variant='h7' sx={{ ml: '20px', mt: '5px' }}>Layout</Typography>
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px' }}>
-        <Box sx={{ ml: '20px' }}>
-          <ShoppingCart />
-          <Typography variant='h7' sx={{ ml: '20px' }}>e-Commerce</Typography>
+      <hr style={{ marginTop: '15px' }} />
+      <Typography ml={'10px'}>APPS & PAGES</Typography>
+      <hr />
+
+      {[
+        { icon: <Email />, text: 'Email' },
+        { icon: <ChatBubble />, text: 'Chat' },
+        { icon: <CalendarMonth />, text: 'Calendar' },
+        { icon: <ViewKanban />, text: 'Kanban' },
+        { icon: <ShoppingCart />, text: 'e-Commerce' },
+        { icon: <Receipt />, text: 'Invoice' },
+        { icon: <LocalShipping />, text: 'Logistics' },
+        { icon: <PersonAddAlt />, text: 'Users' },
+      ].map((item, index) => (
+        <Box key={index} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'column', mt: '30px' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
+            {item.icon}
+            <Typography variant='h7' sx={{ ml: '20px', mt: '5px' }}>{item.text}</Typography>
+          </Box>
         </Box>
-      </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px' }}>
-        <Box sx={{ ml: '20px' }}>
-          <Receipt />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Invoice</Typography>
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px' }}>
-        <Box sx={{ ml: '20px' }}>
-          <LocalShipping />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Logistics</Typography>
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'column', mt: '30px' }}>
-        <Box sx={{ ml: '20px' }}>
-          <PersonAddAlt />
-          <Typography variant='h7' sx={{ ml: '20px' }}>Users</Typography>
-        </Box>
-      </Box>
+      ))}
     </Box>
   );
-}
+};
 
 export default SideNavbar;

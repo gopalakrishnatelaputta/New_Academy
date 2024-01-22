@@ -2,6 +2,7 @@ import { Box, Card, IconButton, Typography } from '@mui/material';
 import React from 'react';
 import RadialBarChart from './Charts/RadialBarChart';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function BottomRightCard() {
   const button = (
@@ -10,28 +11,28 @@ export default function BottomRightCard() {
       sx={{
         backgroundColor: '#8592a3',
         color: 'white',
-        width: '20px',
+        width: '40px',
         height: '20px',
-        borderRadius: 0,
+        borderRadius: 1,
         '&:hover': {
           backgroundColor: 'black',
         },
       }}
     >
-      {'>'}
+      {<ArrowForwardIosIcon sx={{height:'12px',width:'12px'}}></ArrowForwardIosIcon>}
     </IconButton>
   );
 
   const arr3 = [
-    { image: <RadialBarChart />, expert: 'User experience Design', designation: '120 Tasks', hours: button },
-    { image: <RadialBarChart />, expert: 'Basic fundamentals', designation: '32 Tasks', hours: button },
-    { image: <RadialBarChart />, expert: 'React native components', designation: '182 Tasks', hours: button },
-    { image: <RadialBarChart />, expert: 'Basic of music theory', designation: '56 Tasks', hours: button },
+    { image: <Box width={'38%'}><RadialBarChart /></Box>, expert: 'User experience Design', designation: '120 Tasks', hours: button },
+    { image: <Box width={'38%'}><RadialBarChart /></Box>, expert: 'Basic fundamentals', designation: '32 Tasks', hours: button },
+    { image: <Box width={'38%'}><RadialBarChart /></Box>, expert: 'React native components', designation: '182 Tasks', hours: button },
+    { image: <Box width={'38%'}><RadialBarChart /></Box>, expert: 'Basic of music theory', designation: '56 Tasks', hours: button },
   ];
 
   return (
-    <Card elevation={2} sx={{ mt: '15px', mr: '5px', height: '370px', borderRadius: '10px', overflow: 'auto' }}>
-      <Box>
+    <Card elevation={2} sx={{ mt: '10px', mr: '10px',ml:'5px', height: '370px', borderRadius: '10px', overflow: 'auto',width:'100%'}}>
+    
         <Box sx={{ display: 'flex', m: '5px', height: '30px', justifyContent: 'space-between' }}>
           <Typography fontSize={'17.5px'} sx={{ display: 'flex', ml: '10px' }}>
             Assignment Progress
@@ -41,25 +42,25 @@ export default function BottomRightCard() {
 
         <hr></hr>
 
-        <Box component="div" sx={{ marginTop: '10px' }}>
+        <Box  sx={{ marginTop: '10px',}}>
           {arr3.map((item, index) => (
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', mt: 2 }}>
-              <Box sx={{ display: 'flex' }}>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-start', ml: { xs: '0', md: '-90px' } }}>
+            <Box sx={{ mt: 3 ,ml:'20px',display:'flex',justifyContent:'space-between',alignContent:'center',alignItems:'center'}}>
+              <Box sx={{display:'flex'}}>
+                <Box  mb={'5px'}>
                   {item.image}
                 </Box>
-                <Box sx={{ display: 'flex', flexDirection: 'column', mt: { xs: '10px', md: '18px' }, ml: { xs: '0', md: '-100px' } }}>
-                  <Typography variant="subtitle1">{item.expert}</Typography>
-                  <Typography variant="subtitle2">{item.designation}</Typography>
+                <Box mt={'15px'}>
+                  <Typography variant="subtitle1" ml={'20px'}>{item.expert}</Typography>
+                  <Typography variant="subtitle2" ml={'20px'}>{item.designation}</Typography>               
                 </Box>
               </Box>
-              <Box sx={{ display: 'flex', mt: { xs: '10px', md: '23px' }, color: '#e7e7e8' }}>
+              <Box mr={'20px'} mb={'20px'}>
                 {item.hours}
               </Box>
             </Box>
           ))}
         </Box>
-      </Box>
+     
     </Card>
   );
 }

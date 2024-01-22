@@ -4,7 +4,7 @@ import Chart from 'react-apexcharts';
 const RadialBarChart = () => {
   const options = {
     chart: {
-      height: 280,
+      height:140,
       type: "radialBar"
     },
     series: [67],
@@ -38,7 +38,7 @@ const RadialBarChart = () => {
   };
 
   return (
-    <Chart options={options} series={options.series} type="radialBar" height={110} />
+    <Chart  options={options} series={options.series} type="radialBar" height={110}  />
   );
 };
 

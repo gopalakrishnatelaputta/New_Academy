@@ -15,32 +15,32 @@ export default function MiddleRightCard() {
   ];
 
   return (
-    <Card elevation={2} sx={{ mr: ['5px', '10px'], height: ['auto', '250px'], borderRadius: '5px', overflow: 'auto',mt:'5px' }}>
-      <Grid sx={{ display: 'flex', justifyContent: 'space-between', m: ['5px', '10px'] }}>
-        <Typography fontSize={'17.5'} ml={['10px', '10px']}>
+    <Card elevation={2} sx={{ml:'5px', height: "255px", borderRadius: '5px', overflow: 'auto',mr:'5px',mt:'10px'}}>
+      <Grid sx={{ display: 'flex', justifyContent: 'space-between', m: '5px',height:'30px',alignItems:'center' }}>
+        <Typography fontSize={'17.5px'} ml={['10px', '10px']}>
           Popular Instructors
         </Typography>
-        <MoreVertIcon />
+        <MoreVertIcon style={{marginRight:'5px'}}/>
       </Grid>
       <hr />
-      <Grid sx={{ display: 'flex', justifyContent: 'space-between', m: ['5px', '10px'] }}>
-        <Typography sx={{ fontSize: ['15px', '13px'], ml: ['10px', '10px'] }}>INSTRUCTORS</Typography>
-        <Typography sx={{ fontSize: ['15px', '13px'], mr: ['10px', '10px'] }}>COURSES</Typography>
+      <Grid sx={{ display: 'flex', justifyContent: 'space-between', m: '5px' }}>
+        <Typography sx={{ fontSize: '15px', ml: '10px' }}>INSTRUCTORS</Typography>
+        <Typography sx={{ fontSize: '15px', mr: '10px' }}>COURSES</Typography>
       </Grid>
       <hr />
 
-      <Box component="div" sx={{ marginTop: ['10px', '10px'], marginRight: '20px', marginLeft: '20px' }}>
+      <Box component="div" sx={{ marginTop: '10px', marginRight: '20px', marginLeft: '20px' }}>
         {arr.map((item, index) => (
-          <Box sx={{ display: 'flex', flexDirection: ['column', 'row'], justifyContent: 'space-between', alignItems: ['start', 'center'] }}>
-            <Box sx={{ display: 'flex', mt: ['5px', '0px'], alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+             <Box sx={{ display: 'flex', mt: '5px', alignItems: 'center' }}>
               <Avatar src={item.image} />
-              <Box sx={{ ml: ['10px', '10px'], display: 'flex', flexDirection: 'column' }}>
+              <Box sx={{ ml: '10px', display: 'flex', flexDirection: 'column',alignItems:'start',mt:'25px'}}>
                 <Typography fontSize={['13px', '13px']}>{item.expert}</Typography>
                 <Typography variant="caption">{item.designation}</Typography>
                 <br />
               </Box>
             </Box>
-            <Box sx={{ mt: ['10px', '0px'], display: 'flex', justifyContent: 'flex-end', mr: ['10px', '10px'] }}>
+            <Box sx={{ mt: '10px', display: 'flex', justifyContent: 'flex-end', mr: '10px' }}>
               {item.courses}
             </Box>
           </Box>

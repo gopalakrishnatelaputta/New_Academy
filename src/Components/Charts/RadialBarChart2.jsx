@@ -1,50 +1,41 @@
-
 import React from 'react';
-import Chart from 'react-apexcharts';
+import { Doughnut } from 'react-chartjs-2';
 
-const RadialBarChart = () => {
-  const options = {
-    chart: {
-      height: 280,
-      type: "radialBar"
-      
+const RadialBarChart = ({ progress }) => {
+  const chartData = {
+    labels: ['Progress'],
+    datasets: [
+      {
+        data: [progress, 100 - progress],
+        backgroundColor: ['#4caf50', '#e0e0e0'], // Adjust colors as needed
+      },
+    ],
+  };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '70%',
+    plugins: {
+      legend: {
+        display: false,
+      },
     },
-    series: [42],
-    plotOptions: {
-      radialBar: {
-       
-        hollow: {
-          margin: 15,
-          size: "50%"
-        },
-        dataLabels: {
-          showOn: "always",
-          name: {
-            offsetY: -4,
-            show: true,
-            color: "#888",
-            fontSize: "10px"
-          },
-          value: {
-            color:'#d9dee3',
-            // color: "#111",
-            fontSize: "14px",
-            show: true,
-            offsetY:-4
-          }
-        }
-      }
+    elements: {
+      center: {
+        text: `${progress}%`,
+        color: '#000000', // Center text color
+        fontStyle: 'Arial', // Font style for center text
+        sidePadding: 20, // Adjust padding as needed
+      },
     },
-    stroke: {
-      lineCap: "round",
-    },
-    labels: ["Progress"]
   };
 
   return (
-    <Chart options={options} series={options.series} type="radialBar" height={120}  />
+    <div>
+      <Doughnut data={chartData} options={chartOptions} />
+    </div>
   );
 };
 
 export default RadialBarChart;
-

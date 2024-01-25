@@ -1,10 +1,17 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Typography, Box, Grid, Card, Button } from '@mui/material';
+=======
+import { Typography, Box, Grid, Card } from '@mui/material';
+>>>>>>> origin/main
 import LaptopIcon from '@mui/icons-material/Laptop';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 export default function TopLeftCorner() {
   return (
     <Box sx={{ flex: 1, ml:'5px',mr:'5px',height: '100%', borderRadius: '5px', mt: '10px', overflow: 'auto' }}>
@@ -63,5 +70,8 @@ export default function TopLeftCorner() {
       </Box>
     </Box>
   );
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 }

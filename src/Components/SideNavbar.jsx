@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react';
 import {
   Typography,
   Box,
+<<<<<<< HEAD
   Menu,
   MenuItem,
 } from '@mui/material';
+=======
+} from '@mui/material';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+>>>>>>> origin/main
 import Home from '@mui/icons-material/Home';
 import Dashboard from '@mui/icons-material/Dashboard';
 import FlipToFront from '@mui/icons-material/FlipToFront';
@@ -19,6 +24,7 @@ import PersonAddAlt from '@mui/icons-material/PersonAddAlt';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import CloseIcon from '@mui/icons-material/Close';
 
+<<<<<<< HEAD
 
 
 
@@ -78,6 +84,8 @@ const DropdownButton = ({ icon, text, options }) => {
 
 
 
+=======
+>>>>>>> origin/main
 const SideNavbar = ({ isMenuOpen: parentIsMenuOpen, handleMenuClose }) => {
   const [localIsMenuOpen, setLocalIsMenuOpen] = useState(false);
 
@@ -105,6 +113,7 @@ const SideNavbar = ({ isMenuOpen: parentIsMenuOpen, handleMenuClose }) => {
       </Box>
       <hr />
 
+<<<<<<< HEAD
 
       {[
   { icon: <Home />, text: 'Email' },
@@ -123,6 +132,29 @@ const SideNavbar = ({ isMenuOpen: parentIsMenuOpen, handleMenuClose }) => {
   />
 ))}
 
+=======
+     
+      <Box sx={{ display: 'flex', flexDirection: 'column', mt: '30px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
+          <Home sx={{ height: '30px', width: '30px' }} />
+          <Typography variant='h7' sx={{ ml: '20px', mt: '5px' }}>Home</Typography>
+          <ArrowForwardIosIcon fontSize='10px' />
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column', mt: '30px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
+          <Dashboard sx={{ height: '30px', width: '30px' }} />
+          <Typography variant='h7' sx={{ ml: '20px', mt: '5px' }}>Dashboard</Typography>
+        </Box>
+      </Box>
+
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'column', mt: '30px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
+          <FlipToFront sx={{ height: '30px', width: '30px' }} />
+          <Typography variant='h7' sx={{ ml: '20px', mt: '5px' }}>Layout</Typography>
+        </Box>
+      </Box>
+>>>>>>> origin/main
       <hr style={{ marginTop: '15px' }} />
       <Typography ml={'10px'}>APPS & PAGES</Typography>
       <hr />
@@ -137,6 +169,7 @@ const SideNavbar = ({ isMenuOpen: parentIsMenuOpen, handleMenuClose }) => {
         { icon: <LocalShipping />, text: 'Logistics' },
         { icon: <PersonAddAlt />, text: 'Users' },
       ].map((item, index) => (
+<<<<<<< HEAD
         <Box key={index} mt={'30px'} >
           <Box display={{display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
              <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
@@ -146,6 +179,12 @@ const SideNavbar = ({ isMenuOpen: parentIsMenuOpen, handleMenuClose }) => {
             <Box sx={{display:'flex',justifyContent:'end',ml:'100px'}}>
                   <ArrowForwardIosIcon sx={{fontSize:'12px',mt:'10px',display:'flex',mr:'15px'}} />
             </Box>
+=======
+        <Box key={index} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'column', mt: '30px' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', ml: '20px' }}>
+            {item.icon}
+            <Typography variant='h7' sx={{ ml: '20px', mt: '5px' }}>{item.text}</Typography>
+>>>>>>> origin/main
           </Box>
         </Box>
       ))}

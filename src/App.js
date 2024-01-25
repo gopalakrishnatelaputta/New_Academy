@@ -1,6 +1,7 @@
 
 import './App.css';
 import DashBoardScreen from "./Components/DashBoardScreen.jsx"
+<<<<<<< HEAD
 import DataFetchingOne from './Hooks/DataFetchingOne.jsx';
 import DatafectingCompo from './Hooks/DatafectingCompo.jsx';
 import UseContexA from './Hooks/UseContexA.jsx';
@@ -15,10 +16,13 @@ import Formhandling from './PracticeComoponents/Formhandling.jsx';
 import MapFunction from './PracticeComoponents/MapFunction.jsx';
 import ParentComponent from './PracticeComoponents/MethodsAsProps/ParentCmponent.jsx'
 
+=======
+>>>>>>> origin/main
 
 function App() {
   return (
     
+<<<<<<< HEAD
       // <DashBoardScreen/>
       //  <EventBind></EventBind> 
       // <ParentComponent />
@@ -32,6 +36,12 @@ function App() {
       // <UseContexA></UseContexA>
       // <UseReducer1></UseReducer1>
       <DataFetchingOne></DataFetchingOne>
+=======
+      <DashBoardScreen/>
+        
+      
+    
+>>>>>>> origin/main
   );
 }
 
